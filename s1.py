@@ -17,9 +17,13 @@ def load_excel(file):
 
 def display_sheet(excel_file_path,sheet_name):
     df=pd.read_excel(excel_file_path,sheet_name=sheet_name)
-    st.write(f"### {sheet_name}")
-    st.dataframe(df)
-    return df
+    if not df.empty:
+        st.write(f"### {sheet_name}")
+        st.dataframe(df)
+        return df
+    else:
+        st.write("DataFrame is empty")
+    
 
 
 
