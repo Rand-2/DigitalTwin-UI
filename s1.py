@@ -16,13 +16,18 @@ def load_excel(file):
     return pd.ExcelFile(file)
 
 def display_sheet(excel_file_path,sheet_name):
-    df=pd.read_excel(excel_file_path,sheet_name=sheet_name)
-    if not df.empty:
-        st.write(f"### {sheet_name}")
-        st.dataframe(df)
-        return df
-    else:
-        st.write("DataFrame is empty")
+    try:
+        df=pd.read_excel(excel_file_path,sheet_name=sheet_name)
+        if df is not None and not df.empty:
+            st.write(f"### {sheet_name}")
+            st.dataframe(df)
+            return df
+        else:
+            st.write("DataFrame is empty")
+    except Exception as e:
+         st.error(f"Error loading or displaying data: {str(e)}")
+
+
     
 
 
