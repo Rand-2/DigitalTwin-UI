@@ -4,10 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import random
+import os
 
 st.title("Supply Chain Digital Twin")
 
-excel_file_path="C:/Users/kota.kiran/OneDrive/DigitalTwin.xlsx"
+excel_file_path="data/DigitalTwin.xlsx"
     
 uploaded_file = st.file_uploader("Upload Excel file", type=["xlsx",'csv'])
 
