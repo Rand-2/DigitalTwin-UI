@@ -24,8 +24,10 @@ def display_sheet(excel_file_path,sheet_name):
             return df
         else:
             st.write("DataFrame is empty")
+            return None
     except Exception as e:
          st.error(f"Error loading or displaying data: {str(e)}")
+         return None
 
 
     
