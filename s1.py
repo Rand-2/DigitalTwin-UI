@@ -700,14 +700,14 @@ if __name__ == "__main__":
         st.session_state['sheet_names'] = excel_file_path.sheet_names
 
     df = st.session_state.get('df', pd.DataFrame())
-    if not df.empty:   
-        with st.expander("Select Sheet and Display DataFrame", expanded=True):
+    
+    with st.expander("Select Sheet and Display DataFrame", expanded=True):
                 m1 = st.selectbox("Select Sheet", st.session_state['sheet_names'])
                 st.session_state['df'] = display_sheet(st.session_state['file_to_load'], m1)
                 df = st.session_state['df']
         
         #st.header("Visualizations")
-        with st.expander("Plot Options", expanded=True):
+    with st.expander("Plot Options", expanded=True):
             x_axis = st.selectbox("Select X-axis", df.columns)
             y_axis = st.selectbox("Select Y-axis", df.columns)
             plot_type = st.selectbox("Select Plot Type", ["Line", "Bar", "Scatter", "Histogram", "Boxplot", "Heatmap", "Violin"])
