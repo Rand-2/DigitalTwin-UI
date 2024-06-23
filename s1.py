@@ -736,8 +736,8 @@ if __name__ == "__main__":
             st.write("Press the Run button to load and view data")
 
     
-    st. header("Simulation Controls")
-    mode = st.selectbox("Select Mode", ["Automatic Order Entry","Manual Order Entry"])
+    st.sidebar.header("Simulation Controls")
+    mode = st.sidebar.selectbox("Select Mode", ["Automatic Order Entry","Manual Order Entry"])
     if mode == "Manual Order Entry":
             manual_order_entry(initial_store_inventory)
     elif mode == "Automatic Order Entry":
